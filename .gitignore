@@ -8,10 +8,7 @@ env/
 venv/
 
 # Data files
-*.csv
 *.parquet
-data/raw/*
-!data/raw/.gitkeep
 
 # IDE
 .vscode/
