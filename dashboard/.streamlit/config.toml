@@ -14,3 +14,6 @@ serverAddress = "localhost"
 
 [runner]
 magicEnabled = false
+
+[client]
+showErrorDetails = true
