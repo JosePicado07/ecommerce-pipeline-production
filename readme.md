@@ -19,14 +19,20 @@ A production-grade data engineering project implementing the **Medallion Archite
 - [Setup & Installation](#setup--installation)
 - [Usage](#usage)
 - [Business Insights](#business-insights)
-- [Implementation Status](#implementation-status)
-- [Future Enhancements](#future-enhancements)
+- [Dashboard](#dashboard)
+- [Project Outcomes](#project-outcomes)
 
 ---
 
 ## Overview
 
-This project demonstrates modern data engineering best practices by building a scalable, production-ready analytics pipeline. It processes over 43MB of Brazilian e-commerce data through a three-tier medallion architecture, implementing comprehensive data quality checks and generating actionable business insights.
+This is a hands-on learning project demonstrating modern data engineering best practices by building a complete analytics pipeline on Databricks. It processes over 43MB of historical Brazilian e-commerce data (2016-2018) from the Olist platform through a three-tier medallion architecture, implementing comprehensive data quality checks, and providing an interactive dashboard for business insights.
+
+**Project Goals:**
+- Learn and implement the **Medallion Architecture** (Bronze → Silver → Gold)
+- Gain hands-on experience with **Databricks** and **Delta Lake**
+- Practice data quality validation with **Great Expectations**
+- Build end-to-end data pipeline from raw data to visualization
 
 **Key Features:**
 - ✅ **Medallion Architecture** - Progressive data refinement through Bronze, Silver, and Gold layers
@@ -389,16 +395,16 @@ This dataset contains real commercial data from the Brazilian e-commerce platfor
 
 | Technology | Purpose | Version |
 |------------|---------|---------|
-| **Apache Spark (PySpark)** | Distributed data processing engine | Latest |
-| **Delta Lake** | ACID-compliant storage layer | Latest |
+| **Apache Spark (PySpark)** | Distributed data processing engine | 3.5.0 |
+| **Delta Lake** | ACID-compliant storage layer | 3.0.0 |
 | **Databricks Community Edition** | Cloud-based development platform | N/A |
 | **Great Expectations** | Data quality validation framework | 0.18.12 |
+| **Streamlit** | Interactive dashboard framework | 1.29.0 |
+| **Plotly** | Interactive visualization library | 5.18.0 |
 | **Python** | Primary programming language | 3.x |
+| **Pandas** | Data manipulation library | 2.1.3 |
+| **NumPy** | Numerical computing library | 1.24.3 |
 | **SQL (Spark SQL)** | Data querying and transformation | N/A |
-
-**Planned Technologies:**
-- **Prefect** - Workflow orchestration
-- **Streamlit** - Interactive dashboard
 
 ---
 
@@ -548,80 +554,82 @@ This pipeline enables comprehensive business analysis across multiple dimensions
 
 ---
 
-## Implementation Status
+## Dashboard
 
-### ✅ Completed
+### Interactive Analytics Dashboard
 
-- **Bronze Layer:** 4/4 tables implemented
-  - ✅ bronze.customers
-  - ✅ bronze.orders
-  - ✅ bronze.order_items
-  - ✅ bronze.products
+Built with **Streamlit** for real-time data exploration and visualization.
 
-- **Silver Layer:** 4/4 tables implemented
-  - ✅ silver.customers (with region enrichment)
-  - ✅ silver.orders (with temporal validation)
-  - ✅ silver.order_items (with business rules)
-  - ✅ silver.products (with standardization)
+**Features:**
+- 📊 **4 Interactive Pages:**
+  - **Overview** - Key metrics and summary statistics
+  - **Revenue Analytics** - Revenue trends, distribution, and performance analysis
+  - **Customer Segments** - RFM-based customer segmentation and behavior analysis
+  - **Product Performance** - Category and product-level performance metrics
 
-- **Gold Layer:** 3/3 analytics tables
-  - ✅ gold.revenue_by_day
-  - ✅ gold.customer_rfm_segments
-  - ✅ gold.product_category_summary
+- 🎨 **Professional UI:**
+  - Clean, modern design with light theme
+  - Responsive charts using Plotly
+  - Interactive filters and drill-down capabilities
+  - Brazilian Real (R$) currency formatting
 
-- **Data Quality:** Comprehensive validation framework
-  - ✅ Great Expectations integration
-  - ✅ Automated quality checks
-  - ✅ Quality reporting and scoring
+- 📈 **Visualization Types:**
+  - Line charts for trends
+  - Bar charts for comparisons
+  - Pie/Donut charts for distributions
+  - Scatter plots for correlations
+  - Histograms for distributions
+  - Data tables for detailed analysis
 
-### 🚧 In Progress / Planned
+**Running the Dashboard:**
+```bash
+# Install dependencies
+pip install streamlit pandas numpy plotly
 
-- **Workflow Orchestration:** Prefect integration
-- **Dashboard:** Streamlit application
-- **Testing:** Unit test implementation
-- **Documentation:** API documentation
-- **CI/CD:** Automated deployment pipeline
+# Navigate to dashboard folder
+cd dashboard
+
+# Run the application
+streamlit run app.py
+```
+
+Access at: `http://localhost:8501`
 
 ---
 
-## Future Enhancements
+## Project Outcomes
 
-### Short-Term
-1. **Workflow Orchestration**
-   - Implement Prefect for automated pipeline execution
-   - Schedule daily/weekly batch runs
-   - Add failure notifications and retry logic
+### ✅ Successfully Completed
 
-2. **Interactive Dashboard**
-   - Build Streamlit dashboard for business users
-   - Real-time metrics visualization
-   - Self-service analytics interface
+**Data Pipeline (Medallion Architecture):**
+- ✅ **Bronze Layer:** 4 tables - Raw data ingestion with full audit trail
+- ✅ **Silver Layer:** 4 tables - Data cleaning, validation, and enrichment
+- ✅ **Gold Layer:** 3 analytics tables - Business-ready aggregations and KPIs
 
-3. **Testing Framework**
-   - Unit tests for transformation logic
-   - Integration tests for end-to-end pipeline
-   - Performance benchmarking
+**Data Quality:**
+- ✅ Comprehensive validation framework using Great Expectations
+- ✅ Automated quality checks across all layers
+- ✅ Quality reporting and scoring system
 
-### Long-Term
-1. **Advanced Analytics**
-   - Predictive modeling (churn prediction, demand forecasting)
-   - Customer cohort analysis
-   - Market basket analysis
+**Visualization:**
+- ✅ Production-ready Streamlit dashboard
+- ✅ 4 interactive pages with 15+ charts
+- ✅ Professional UI with modern design
 
-2. **Real-Time Processing**
-   - Streaming data ingestion with Spark Streaming
-   - Real-time dashboards
-   - Event-driven architecture
+**Learning Achievements:**
+- ✅ Hands-on experience with Databricks Community Edition
+- ✅ Implemented complete Medallion Architecture
+- ✅ Practiced Delta Lake features (ACID, time travel, schema evolution)
+- ✅ Applied data quality best practices
+- ✅ Built end-to-end data pipeline from raw data to visualization
 
-3. **Data Governance**
-   - Data catalog integration
-   - PII masking and encryption
-   - GDPR compliance features
-
-4. **Performance Optimization**
-   - Table partitioning strategies
-   - Z-ordering for query optimization
-   - Caching layer implementation
+**Technical Skills Demonstrated:**
+- Apache Spark (PySpark) for distributed data processing
+- Delta Lake for reliable data storage
+- SQL for data transformations
+- Great Expectations for data quality
+- Streamlit for interactive dashboards
+- Git for version control
 
 ---
 
@@ -638,26 +646,54 @@ This pipeline enables comprehensive business analysis across multiple dimensions
 
 ---
 
-## Contributing
+## About This Project
 
-Contributions are welcome! Please follow these guidelines:
-1. Fork the repository
-2. Create a feature branch
-3. Implement changes with tests
-4. Submit a pull request
+This is a **hands-on learning project** created to gain practical experience with modern data engineering tools and practices, specifically:
+
+- **Databricks** - Cloud-based data engineering platform
+- **Medallion Architecture** - Industry-standard data lakehouse pattern
+- **Delta Lake** - Reliable and performant data storage
+- **Data Quality Engineering** - Validation and monitoring best practices
+
+### Project Scope
+
+The entire project was designed and implemented as a complete learning exercise to understand:
+1. How to structure a data lakehouse using the Bronze-Silver-Gold pattern
+2. Best practices for data ingestion, transformation, and quality validation
+3. Building production-ready data pipelines on Databricks
+4. Creating business-ready analytics and visualizations
+
+All components (data pipeline, quality checks, and dashboard) represent the complete scope of this learning project.
+
+---
+
+## Key Learnings
+
+**Data Engineering Concepts:**
+- Medallion Architecture implementation from scratch
+- Delta Lake features: ACID transactions, time travel, schema enforcement
+- Data quality frameworks and automated validation
+- Metadata management and data lineage tracking
+
+**Technical Skills:**
+- PySpark for distributed data processing
+- Spark SQL for data transformations
+- Great Expectations for quality checks
+- Streamlit for interactive dashboards
+- Git for version control
+
+**Best Practices:**
+- Idempotent pipeline operations
+- Comprehensive data validation
+- Proper separation of concerns (Bronze/Silver/Gold)
+- Business-focused analytics layer
 
 ---
 
 ## License
 
-This project is for educational and demonstration purposes.
+This project is for **educational and demonstration purposes**.
 
 ---
 
-## Contact
-
-For questions or feedback about this project, please open an issue in the repository.
-
----
-
-**Built with ❤️ on Databricks**
+**Built with ❤️ on Databricks | A Hands-On Learning Project**
