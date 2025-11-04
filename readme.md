@@ -554,6 +554,9 @@ This pipeline enables comprehensive business analysis across multiple dimensions
 
 ### Interactive Analytics Dashboard
 
+**Access the production dashboard:**  
+🔗 **https://ecommerce-pipeline-appuction-zzwnqgphtc6gapcamduktj.streamlit.app/**
+
 Built with **Streamlit** for real-time data exploration and visualization.
 
 **Features:**
