@@ -36,7 +36,7 @@ notebooks/
 
 dashboard/
 └── app.py                                  # Streamlit dashboard
-
+```
 
 ## 🎯 Features
 
