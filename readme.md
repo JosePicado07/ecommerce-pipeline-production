@@ -24,17 +24,18 @@ End-to-end data pipeline processing Brazilian e-commerce data through:
 
 ## 📁 Project Structure
 
+```bash
 notebooks/
-├── 01_bronze_layer.py.ipynb          # Raw data ingestion
+├── 01_bronze_layer.py.ipynb                # Raw data ingestion
 ├── 02_silver_layer_customers.py.ipynb
 ├── 02_silver_layer_order.py.ipynb
 ├── 02_silver_layer_orders_items.py.ipynb
 ├── 02_silver_layer_products.py.ipynb
-├── 03_gold_layer.py.ipynb            # Business analytics
-└── 04_data_quality_checks.py.ipynb   # Data validation
+├── 03_gold_layer.py.ipynb                  # Business analytics
+└── 04_data_quality_checks.py.ipynb         # Data validation
 
 dashboard/
-└── app.py                            # Streamlit dashboard
+└── app.py                                  # Streamlit dashboard
 
 
 ## 🎯 Features
