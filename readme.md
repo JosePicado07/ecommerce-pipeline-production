@@ -1,69 +1,55 @@
-```markdown
 # 🛒 E-Commerce Analytics Pipeline
 
-A complete data pipeline implementing **Medallion Architecture** on Databricks, processing Brazilian e-commerce data from Olist.
+A complete data pipeline implementing **Medallion Architecture** on Databricks.
 
 ## 🚀 Live Demo
 
 **[👉 View Live Dashboard](https://ecommerce-pipeline-appuction-zzwnqgphtc6gapcamduktj.streamlit.app/)**
 
-## 📊 Architecture
+## 📊 What I Built
 
-```
-Raw CSVs → Bronze (Raw) → Silver (Cleaned) → Gold (Analytics) → Dashboard
-```
+End-to-end data pipeline processing Brazilian e-commerce data through:
+
+- **Bronze Layer** - Raw data ingestion
+- **Silver Layer** - Data cleaning & validation  
+- **Gold Layer** - Business analytics & RFM segmentation
+- **Dashboard** - Interactive analytics
 
 ## 🛠️ Tech Stack
 
-- **Databricks** + **Delta Lake** (Medallion Architecture)
+- **Databricks** + **Delta Lake**
 - **PySpark** - Data processing
-- **Great Expectations** - Data quality
 - **Streamlit** - Dashboard
-- **Plotly** - Visualizations
+- **Great Expectations** - Data quality
 
-## 📁 Pipeline Structure
+## 📁 Project Structure
 
-### **Bronze Layer** (Raw Ingestion)
-- `01_bronze_layer.py.ipynb` - Raw data ingestion
+notebooks/
+├── 01_bronze_layer.py.ipynb # Raw data ingestion
+├── 02_silver_layer_customers.py.ipynb
+├── 02_silver_layer_order.py.ipynb
+├── 02_silver_layer_orders_items.py.ipynb
+├── 02_silver_layer_products.py.ipynb
+├── 03_gold_layer.py.ipynb # Business analytics
+└── 04_data_quality_checks.py.ipynb # Data validation
 
-### **Silver Layer** (Data Cleaning)
-- `02_silver_layer_customers.py.ipynb` - Customer data
-- `02_silver_layer_order.py.ipynb` - Order data  
-- `02_silver_layer_orders_items.py.ipynb` - Order items
-- `02_silver_layer_products.py.ipynb` - Product data
+dashboard/
+└── app.py # Streamlit dashboard
 
-### **Gold Layer** (Business Analytics)
-- `03_gold_layer.py.ipynb` - RFM segmentation & revenue metrics
 
-### **Data Quality**
-- `04_data_quality_checks.py.ipynb` - Validation framework
+## 🎯 Features
 
-## 🎯 Key Features
-
-- **Customer RFM Segmentation** - Identify high-value customers
-- **Revenue Analytics** - Daily trends & performance
-- **Product Performance** - Category-level insights
-- **Data Quality Framework** - Automated validation with Great Expectations
+- **Customer Segmentation** - RFM analysis
+- **Revenue Analytics** - Daily trends
+- **Product Performance** - Category insights
+- **Data Quality** - Automated validation
 
 ## 🏃‍♂️ Quick Start
 
-1. **Upload CSV files** to Databricks DBFS
-2. **Run notebooks in order**:
-   ```bash
-   01_bronze → 02_silver_* → 03_gold → 04_quality
-   ```
-3. **Launch dashboard**:
-   ```bash
-   streamlit run dashboard/app.py
-   ```
-
-## 📈 Results
-
-- **99,441+ customers** analyzed with RFM segmentation
-- **43MB e-commerce data** processed end-to-end
-- **Interactive dashboard** with real-time insights
-- **Production-ready** data pipeline
+1. Upload data to Databricks
+2. Run notebooks in numerical order
+3. Launch dashboard: `streamlit run dashboard/app.py`
 
 ---
 
-*Hands-on learning project for Databricks & Medallion Architecture* 🚀
+*Learning project for data engineering with Databricks* 🚀
