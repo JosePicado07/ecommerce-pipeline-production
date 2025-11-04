@@ -116,11 +116,7 @@ ecommerce-pipeline-production/
 │   ├── 03_gold_layer.ipynb                 # Business analytics layer
 │   └── 04_data_quality_checks.ipynb        # Quality validation framework
 │
-├── src/                                     # Source code modules
-│   └── src.py
 │
-├── test/                                    # Unit tests
-│   └── test_quality.py
 │
 ├── dashboard/                               # Dashboard application
 │   └── app.py
